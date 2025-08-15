@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        button { padding: 10px; background: #0088cc; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>Оплата премиум-доступа</h2>
+    <p>Сумма: 500 руб.</p>
+    <button onclick="pay()">Оплатить</button>
+
+    <script>
+        function pay() {
+            Telegram.WebApp.sendData(JSON.stringify({
+                payment: "success",
+                amount: 500
+            }));
+        }
+    </script>
+</body>
+</html>
